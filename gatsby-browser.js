@@ -5,3 +5,9 @@
  */
 
 // You can delete this file if you're not using it
+
+// Tailwind Import
+import "./src/style/tailwind.css"
+
+// Styles Import
+import "./src/style/style.scss"
