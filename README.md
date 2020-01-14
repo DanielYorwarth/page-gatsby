@@ -13,12 +13,12 @@ A basic Headless WordPress API + Gatsby setup. This theme has inclued basic setu
 
 ## 🚀 Quick start
 
-1.  **Create a Gatsby site.**
+1.  **Create a new site.**
 
-    Use the Gatsby CLI to create a new site, specifying the default starter.
+    Use the Gatsby CLI to create a new site, specifying this repo.
 
     ```shell
-    # create a new Gatsby site using the default starter
+    # create a new site using the Page Gatsby starter
     gatsby new new-site https://github.com/DanielYorwarthPage/page-gatsby.git
     ```
 
@@ -73,6 +73,6 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
 ## 💫 Deploy
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/DanielYorwarthPage/page-gatsby.git)
 
 <!-- AUTO-GENERATED-CONTENT:END -->
