@@ -1,14 +1,17 @@
 import React from 'react'
 import Layout from '../../components/layout'
-import {Link} from 'gatsby'
+import {Link, graphql} from 'gatsby'
 import PostItem from '../../components/posts/PostListingItem'
+import SEO from '../../components/seo'
 
-export default ({pageContext}) => (
+export default ({pageContext, data}) => {
+    return (
         <Layout>
+            <SEO title='Blog' />
             <div className="flex flex-wrap mb-6">
-                {pageContext.posts.map(post => (
+                {data.allWordpressPost.edges.map(post => (
                     <PostItem 
-                        id={post.node.wordpress_id} 
+                        key={post.node.wordpress_id} 
                         date={post.node.date} 
                         title={post.node.title} 
                         excerpt={post.node.excerpt} 
@@ -26,4 +29,23 @@ export default ({pageContext}) => (
                 ))}
             </div>
         </Layout>
-)
+    )
+}
+
+export const query = graphql`
+  query blogListQuery($skip: Int!, $limit: Int!) {
+    allWordpressPost(
+      limit: $limit
+      skip: $skip
+    ) {
+      edges {
+        node {
+          wordpress_id
+          slug
+          title
+          excerpt
+        }
+      }
+    }
+  }
+`

@@ -3,7 +3,9 @@ module.exports = {
     title: `Gatsby Default Starter`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
+    siteUrl: 'http://www.pagedev.co.uk/clients/page-gatsby'
   },
+  pathPrefix: `/clients/page-gatsby`,
   plugins: [
     // Add SEO Component
     `gatsby-plugin-react-helmet`,
@@ -28,14 +30,15 @@ module.exports = {
     `gatsby-plugin-sass`,
     // PostCSS
     `gatsby-plugin-postcss`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `gatsby-starter-default`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#63b3ed`,
+        theme_color: `#63b3ed`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
@@ -48,7 +51,7 @@ module.exports = {
          * The base URL of the WordPress site without the trailingslash and the protocol. This is required.
          * Example : 'gatsbyjsexamplewordpress.wordpress.com' or 'www.example-site.com'
          */
-        baseUrl: "localhost/page-gatsbystartercms",
+        baseUrl: "pagedev.co.uk/clients/page-gatsby-cms",
         // The protocol. This can be http or https.
         protocol: "http",
         // Indicates whether the site is hosted on wordpress.com.

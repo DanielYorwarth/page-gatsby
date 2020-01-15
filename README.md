@@ -27,7 +27,7 @@ A basic Headless WordPress API + Gatsby setup. This theme has inclued basic setu
     Navigate into your new site’s directory and start it up.
 
     ```shell
-    cd new-site/
+    cd new-site
     gatsby develop
     ```
 

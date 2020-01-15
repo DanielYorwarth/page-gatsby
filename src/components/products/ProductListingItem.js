@@ -1,6 +1,7 @@
 import React from 'react'
 import {graphql, StaticQuery, Link} from 'gatsby'
 import {IntlProvider, FormattedMessage} from 'react-intl';
+import Img from "gatsby-image"
 
 
 const PortfolioItems = () => (
@@ -10,7 +11,7 @@ const PortfolioItems = () => (
             .map((product) => (
               <div className="w-1/4 px-2" key={product.node.id}>
                   <div className="shadow-xl rounded-lg p-4 h-full border-solid border-2 border-gray-200">
-                    <img className="max-w-full max-h-xs product-item__thumbnail mx-auto block" alt={product.node.featured_media.alt_text} src={product.node.featured_media.source_url} />
+                    <Img imgStyle={{objectFit: "contain"}}  className="max-w-full max-h-xs product-item__thumbnail mx-auto block" alt={product.node.featured_media.alt_text} fluid={product.node.featured_media.localFile.childImageSharp.fluid} />
                     <div className="flex justify-between items-end">
                       <h2 className="leading-none">{product.node.title}</h2>
                       <span className="mb-6">
@@ -48,6 +49,13 @@ const query = graphql`
         featured_media {
           source_url
           alt_text
+          localFile {
+            childImageSharp {
+              fluid(maxWidth: 600, fit: CONTAIN) {
+                ...GatsbyImageSharpFluid_noBase64
+              }
+            }
+          }
         }
         acf {
           price
