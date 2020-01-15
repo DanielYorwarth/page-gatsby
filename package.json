@@ -29,6 +29,7 @@
     "react-intl": "^3.11.0",
     "react-typography": "^0.16.19",
     "styled-components": "^4.4.1",
+    "typescript": "^3.7.4",
     "typography": "^0.16.19",
     "typography-theme-us-web-design-standards": "^0.16.19"
   },
