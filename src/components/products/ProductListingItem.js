@@ -51,7 +51,7 @@ const query = graphql`
           alt_text
           localFile {
             childImageSharp {
-              fluid(maxWidth: 600, fit: CONTAIN) {
+              fluid(maxWidth: 268, fit: CONTAIN) {
                 ...GatsbyImageSharpFluid_noBase64
               }
             }
