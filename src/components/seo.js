@@ -11,7 +11,7 @@ const SEO = ({title, description, keywords, image})=> (
                 description: description || site.allWordpressSiteMetadata.edges[0].node.description,
                 image: `${image ? image : site.allWordpressWpLogo.edges[0].node.url.source_url}`,
                 keywords: keywords,
-                favicon : site.allWordpressWpFavicon.edges[0].node.url.source_url
+                favicon : site.allWordpressWpFavicon.edges[0].node.url.localFile.childImageSharp.fluid.src
             }
             return (
                 <div>
@@ -46,6 +46,13 @@ const query = graphql `
       node {
         url {
           source_url
+          localFile {
+            childImageSharp {
+              fluid {
+                src
+              }
+            }
+          }
         }
       }
     }
