@@ -52,7 +52,7 @@ const query = graphql`
           localFile {
             childImageSharp {
               fluid(maxWidth: 268, fit: CONTAIN) {
-                ...GatsbyImageSharpFluid_noBase64
+                ...GatsbyImageSharpFluid
               }
             }
           }
