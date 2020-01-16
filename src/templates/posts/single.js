@@ -8,7 +8,7 @@ export default ({data, pageContext}) => {
     const post = data.wordpressPost
     return (
         <Layout>
-            <SEO title={post.title} description={post.excerpt}/>
+            <SEO title={post.yoast_title} description={post.yoast_meta.content}/>
             <h1 dangerouslySetInnerHTML={{__html: post.title}} />
             <div dangerouslySetInnerHTML={{__html: post.content}} />
             <Link to={`/blog/${pagnation === 1 ? '' : pagnation+'/'}`}>
@@ -27,6 +27,11 @@ export const query = graphql`
             date(formatString: "Do MMM YYYY")
             excerpt
             content
+            yoast_title
+            yoast_meta {
+                name
+                content
+            }
         }
     }
 `
